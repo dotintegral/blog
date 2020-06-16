@@ -17,3 +17,7 @@ export const getPosts = (): Post[] => {
 
   return cache;
 };
+
+export const getPostBySlug = (postSlug: string): Post | null => {
+  return getPosts().find(({ slug }) => slug === postSlug) || null;
+};
