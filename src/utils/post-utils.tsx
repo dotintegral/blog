@@ -6,3 +6,23 @@ export const extractMetadata = (post: Post): PostMetadata => ({
   tags: post.tags,
   slug: post.slug,
 });
+
+type Groupped = {
+  [key: string]: Post[];
+};
+
+export const groupByYear = (posts: Post[]) => {
+  const groupped: Groupped = {};
+
+  posts.forEach((post) => {
+    const year = new Date(post.date * 1000).getFullYear();
+
+    if (!groupped[year]) {
+      groupped[year] = [];
+    }
+
+    groupped[year].push(post);
+  });
+
+  return groupped;
+};
