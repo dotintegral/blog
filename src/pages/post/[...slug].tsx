@@ -2,6 +2,7 @@ import { GetServerSideProps } from "next";
 import { getPostBySlug } from "../../utils/post-cache";
 import { Post } from "../../utils/types";
 import Page404 from "../../components/404/404";
+import { MarkdownRenderer } from "../../components/MarkdownRenderer/MarkdownRenderer";
 
 interface PostProps {
   post: Post | null;
@@ -20,7 +21,7 @@ const PostPage: React.FC<PostProps> = ({ post }) => {
       <h1>{post.title}</h1>
       <div>{formattedDate}</div>
       <hr />
-      <pre>{post.body}</pre>
+      <MarkdownRenderer source={post.body} />
     </div>
   );
 };
