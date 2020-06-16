@@ -1,5 +1,6 @@
 import Head from "next/head";
 import { GlobalStyle } from "../components/GlobalStyles/GlobalStyles";
+import { PageLayout } from "../components/PageLayout/PageLayout";
 
 // @ts-ignore
 const MyApp = ({ Component, pageProps }) => {
@@ -12,10 +13,9 @@ const MyApp = ({ Component, pageProps }) => {
         />
       </Head>
       <GlobalStyle />
-      <div>
-        <h1>Page layout</h1>
+      <PageLayout>
         <Component {...pageProps} />
-      </div>
+      </PageLayout>
     </>
   );
 };
