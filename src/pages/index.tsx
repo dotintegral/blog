@@ -1,13 +1,30 @@
 import { getPosts } from "../utils/post-cache";
+import { Post } from "../utils/types";
+import { GetServerSideProps } from "next";
 
-const Home = () => {
-  return <h1>Home</h1>;
+interface HomeProps {
+  posts: Post[];
+}
+
+const Home: React.FC<HomeProps> = ({ posts }) => {
+  const postComponents = posts.map(({ title }, index) => (
+    <div key={index}>
+      <div>title: {title}</div>
+    </div>
+  ));
+
+  return (
+    <div>
+      <h1>Home</h1>
+      <hr />
+      {postComponents}
+    </div>
+  );
 };
 
-export async function getServerSideProps() {
+export const getServerSideProps: GetServerSideProps<HomeProps> = async () => {
   const posts = getPosts();
-  console.log(posts);
-  return { props: { data: "test", posts } };
-}
+  return { props: { posts } };
+};
 
 export default Home;
