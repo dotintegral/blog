@@ -29,9 +29,13 @@ const parsePost = (data: string): Post => {
 };
 
 export const readPostsFromFiles = () => {
-  const posts = fs.readdirSync(postDir, "utf-8");
-  const firstPost = fs.readFileSync(postDir + "/" + posts[0], "utf-8");
-  const post = parsePost(firstPost);
+  const postFiles = fs.readdirSync(postDir, "utf-8");
 
-  return [post];
+  const posts = postFiles
+    .map((file) => fs.readFileSync(postDir + "/" + file, "utf-8"))
+    .map((postData) => parsePost(postData));
+
+  posts.reverse();
+
+  return posts;
 };

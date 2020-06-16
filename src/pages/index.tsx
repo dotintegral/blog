@@ -6,6 +6,7 @@ const Home = () => {
 
 export async function getServerSideProps() {
   const posts = getPosts();
+  console.log(posts);
   return { props: { data: "test", posts } };
 }
 
