@@ -1,6 +1,6 @@
 import ReactMarkdown from "react-markdown/with-html";
 
-import { CodeRenderer } from "./CodeRenderer";
+import { CodeRenderer } from "./renderers/CodeRenderer";
 
 interface MarkdownProps {
   source: string;
