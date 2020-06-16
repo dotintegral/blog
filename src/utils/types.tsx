@@ -1,7 +1,15 @@
-export interface Post {
+export interface PostMetadata {
   date: number;
   title: string;
   tags: string[];
-  body: string;
   slug: string;
 }
+
+export interface Post extends PostMetadata {
+  body: string;
+}
+
+export type SurroundingPosts = {
+  prev: PostMetadata | null;
+  next: PostMetadata | null;
+};
