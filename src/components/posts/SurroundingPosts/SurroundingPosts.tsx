@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { SurroundingPosts, PostMetadata } from "../../../utils/types";
-import { PostTeaser } from "../PostTeaser/PostTeaser";
+import { PostTeaser, EmptyTeaser } from "../PostTeaser/PostTeaser";
 
 export interface SurroundingPostsProps {
   surroundingPosts: SurroundingPosts;
@@ -29,8 +29,8 @@ export const Surrounding: React.FC<SurroundingPostsProps> = ({
 
   return (
     <Wrapper>
-      {prev ? <Prev post={prev} /> : <></>}
-      {next ? <Next post={next} /> : <></>}
+      {prev ? <Prev post={prev} /> : <EmptyTeaser />}
+      {next ? <Next post={next} /> : <EmptyTeaser />}
     </Wrapper>
   );
 };

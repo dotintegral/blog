@@ -29,6 +29,12 @@ const TeaserSummary = styled.div`
   margin-top: 12px;
 `;
 
+export const EmptyTeaser = styled.div`
+  display: block;
+  flex: 0 48%;
+  box-sizing: border-box;
+`;
+
 interface TeaserProps {
   post: PostMetadata;
   headline?: string;
