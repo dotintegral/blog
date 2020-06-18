@@ -15,11 +15,11 @@ export const Wrapper = styled.div`
 `;
 
 const Prev: React.FC<{ post: PostMetadata }> = ({ post }) => (
-  <PostTeaser post={post} headline="Previous post" />
+  <PostTeaser post={post} headline="&#171; Previous post" />
 );
 
 const Next: React.FC<{ post: PostMetadata }> = ({ post }) => (
-  <PostTeaser post={post} headline="Next post" />
+  <PostTeaser post={post} headline="Next post &#187;" />
 );
 
 export const Surrounding: React.FC<SurroundingPostsProps> = ({
