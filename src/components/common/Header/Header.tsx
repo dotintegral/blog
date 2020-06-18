@@ -1,8 +1,8 @@
 import styled from "styled-components";
-import { Spacer } from "../../common/Spacer/Spacer";
+import { Spacer } from "../Spacer/Spacer";
 
 const HeaderWrapper = styled.div`
-  margin: 12px 40px;
+  margin: 12px 0;
 `;
 
 const HeaderTitle = styled.div`
@@ -20,7 +20,7 @@ const HeaderSubtitle = styled.div`
 export const Header: React.FC = () => (
   <HeaderWrapper>
     <HeaderTitle>Artur Siery's Code Blog</HeaderTitle>
-    <HeaderSubtitle>Thoughs on JavaScript and TypeScript</HeaderSubtitle>
+    <HeaderSubtitle>Thoughs on coding</HeaderSubtitle>
     <Spacer />
   </HeaderWrapper>
 );

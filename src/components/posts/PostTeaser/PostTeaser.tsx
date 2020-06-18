@@ -8,7 +8,7 @@ export const TeaserWrapper = styled.a`
   background: #fafafa;
   text-decoration: none;
   border-radius: 8px;
-  flex: 0 48%;
+  flex: 0 0 49%;
   box-sizing: border-box;
   padding: 18px 24px;
   color: #000;
@@ -39,15 +39,19 @@ interface TeaserProps {
   post: PostMetadata;
   headline?: string;
   summary?: boolean;
+  headlineAlign?: "left" | "right";
 }
 
 export const PostTeaser: React.FC<TeaserProps> = ({
   post,
   headline,
+  headlineAlign = "right",
   summary = true,
 }) => (
   <TeaserWrapper href={getHref(post.slug)}>
-    <TeaserHeadline>{headline || format(post.date)}</TeaserHeadline>
+    <TeaserHeadline style={{ textAlign: headlineAlign }}>
+      {headline || format(post.date)}
+    </TeaserHeadline>
     <TeaserTitle>{post.title}</TeaserTitle>
     {summary ? <TeaserSummary>{post.summary}</TeaserSummary> : <></>}
   </TeaserWrapper>

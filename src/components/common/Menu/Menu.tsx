@@ -1,9 +1,7 @@
 import styled from "styled-components";
-import { Spacer } from "../../common/Spacer/Spacer";
+import { Spacer } from "../Spacer/Spacer";
 
-const MenuWrapper = styled.div`
-  margin: 0px 40px;
-`;
+const MenuWrapper = styled.div``;
 
 const MenuContainer = styled.div`
   margin: 0px 0px -12px;

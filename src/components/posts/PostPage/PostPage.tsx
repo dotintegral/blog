@@ -5,13 +5,13 @@ import { Surrounding } from "../SurroundingPosts/SurroundingPosts";
 import { format } from "../../../utils/date-formatter";
 import { Spacer } from "../../common/Spacer/Spacer";
 
-export interface PostProps {
+export interface PostPageProps {
   post: Post;
   surroundingPosts: SurroundingPosts;
 }
 
 const PostWrapper = styled.div`
-  margin: 24px 40px;
+  margin: 24px 0px;
 `;
 
 const PostTitle = styled.h1`
@@ -24,7 +24,10 @@ const PostDate = styled.div`
   font-size: 16px;
 `;
 
-export const PostBody: React.FC<PostProps> = ({ post, surroundingPosts }) => {
+export const PostPage: React.FC<PostPageProps> = ({
+  post,
+  surroundingPosts,
+}) => {
   return (
     <PostWrapper>
       <PostDate>{format(post.date)}</PostDate>

@@ -1,7 +1,6 @@
 import styled from "styled-components";
-import { Header } from "../Header/Header";
-import { Spacer } from "../../common/Spacer/Spacer";
-import { Menu } from "../Menu/Menu";
+import { Header } from "../../common/Header/Header";
+import { Menu } from "../../common/Menu/Menu";
 
 const Page = styled.div`
   max-width: 1400px;
@@ -10,7 +9,7 @@ const Page = styled.div`
 
 const PageWrapper = styled.div`
   background: white;
-  padding: 24px 18px;
+  padding: 24px 60px;
   border-radius: 4px;
   box-shadow: rgba(0, 0, 0, 0.5) 0px 0px 16px;
 `;
