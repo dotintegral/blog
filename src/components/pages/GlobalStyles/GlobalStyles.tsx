@@ -10,6 +10,9 @@ export const GlobalStyle = createGlobalStyle`
     margin: 0px;
     padding: 0px;
     font-family: "Source Sans Pro", sans-serif;
-    background: #a0a0a0;
+    background: url(/background.jpg) ;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
   }
 `;
