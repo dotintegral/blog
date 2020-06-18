@@ -8,7 +8,7 @@ const MyApp = ({ Component, pageProps }) => {
     <>
       <Head>
         <link
-          href="https://fonts.googleapis.com/css?family=Source+Sans+Pro"
+          href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&family=Source+Sans+Pro&display=swap"
           rel="stylesheet"
         />
       </Head>

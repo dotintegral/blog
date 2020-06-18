@@ -11,9 +11,5 @@ const renderers = {
 };
 
 export const MarkdownRenderer: React.FC<MarkdownProps> = ({ source }) => {
-  return (
-    <div>
-      <ReactMarkdown source={source} renderers={renderers} />
-    </div>
-  );
+  return <ReactMarkdown source={source} renderers={renderers} />;
 };

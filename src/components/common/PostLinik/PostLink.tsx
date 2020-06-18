@@ -3,7 +3,7 @@ interface PostLink {
   caption: string;
 }
 
-const getHref = (slug: string) => {
+export const getHref = (slug: string) => {
   const result = /^(\d{4}-\d{2}-\d{2})-(.*)$/.exec(slug);
 
   if (!result) {
