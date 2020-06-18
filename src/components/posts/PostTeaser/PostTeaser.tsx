@@ -26,6 +26,7 @@ const TeaserTitle = styled.div`
 
 const TeaserSummary = styled.div`
   color: #303030;
+  margin-top: 12px;
 `;
 
 interface TeaserProps {

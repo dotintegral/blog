@@ -1,7 +1,5 @@
 import styled from "styled-components";
-import { SurroundingPosts, Post, PostMetadata } from "../../../utils/types";
-import { MarkdownRenderer } from "../MarkdownRenderer/MarkdownRenderer";
-import { PostLink } from "../../common/PostLinik/PostLink";
+import { SurroundingPosts, PostMetadata } from "../../../utils/types";
 import { PostTeaser } from "../PostTeaser/PostTeaser";
 
 export interface SurroundingPostsProps {
@@ -9,9 +7,11 @@ export interface SurroundingPostsProps {
 }
 
 export const Wrapper = styled.div`
-  margin: 24px 0;
+  margin: 36px 0 30px;
+  padding-top: 36px;
   display: flex;
   justify-content: space-between;
+  border-top: solid 1px #f0f0f0;
 `;
 
 const Prev: React.FC<{ post: PostMetadata }> = ({ post }) => (
