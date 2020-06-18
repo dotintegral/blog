@@ -6,12 +6,15 @@ export interface SurroundingPostsProps {
   surroundingPosts: SurroundingPosts;
 }
 
-export const Wrapper = styled.div`
+const Wrapper = styled.div`
   margin: 36px 0 30px;
-  padding-top: 36px;
+  padding-top: 0px;
+  border-top: solid 1px #f0f0f0;
+`;
+
+const PostWrapper = styled.div`
   display: flex;
   justify-content: space-between;
-  border-top: solid 1px #f0f0f0;
 `;
 
 const Prev: React.FC<{ post: PostMetadata }> = ({ post }) => (
@@ -33,8 +36,11 @@ export const Surrounding: React.FC<SurroundingPostsProps> = ({
 
   return (
     <Wrapper>
-      {prev ? <Prev post={prev} /> : <EmptyTeaser />}
-      {next ? <Next post={next} /> : <EmptyTeaser />}
+      <h2>Also check out</h2>
+      <PostWrapper>
+        {prev ? <Prev post={prev} /> : <EmptyTeaser />}
+        {next ? <Next post={next} /> : <EmptyTeaser />}
+      </PostWrapper>
     </Wrapper>
   );
 };

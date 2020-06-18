@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { SurroundingPosts, Post } from "../../../utils/types";
-import { MarkdownRenderer } from "../MarkdownRenderer/MarkdownRenderer";
-import { Surrounding } from "../SurroundingPosts/SurroundingPosts";
+import { MarkdownRenderer } from "../../posts/MarkdownRenderer/MarkdownRenderer";
+import { Surrounding } from "../../posts/SurroundingPosts/SurroundingPosts";
 import { format } from "../../../utils/date-formatter";
 import { Spacer } from "../../common/Spacer/Spacer";
 

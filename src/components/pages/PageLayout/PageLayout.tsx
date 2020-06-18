@@ -1,10 +1,11 @@
 import styled from "styled-components";
 import { Header } from "../../common/Header/Header";
 import { Menu } from "../../common/Menu/Menu";
+import { Footer } from "../../common/Footer/Footer";
 
 const Page = styled.div`
   max-width: 1400px;
-  margin: 0px auto;
+  margin: 12px auto;
 `;
 
 const PageWrapper = styled.div`
@@ -23,6 +24,7 @@ export const PageLayout: React.FC = ({ children }) => {
         <Header />
         <Menu />
         <ContentWrapper>{children}</ContentWrapper>
+        <Footer />
       </PageWrapper>
     </Page>
   );

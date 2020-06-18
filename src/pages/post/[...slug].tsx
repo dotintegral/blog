@@ -4,7 +4,7 @@ import { Post as PostType, SurroundingPosts } from "../../utils/types";
 import Page404 from "../../components/pages/404/404";
 import { MarkdownRenderer } from "../../components/posts/MarkdownRenderer/MarkdownRenderer";
 import { PostLink } from "../../components/common/PostLinik/PostLink";
-import { PostPage } from "../../components/posts/PostPage/PostPage";
+import { PostPage } from "../../components/pages/PostPage/PostPage";
 
 export interface PostPageProps {
   post: PostType | null;

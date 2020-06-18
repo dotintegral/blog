@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { Post } from "../../../utils/types";
-import { PostTeaser } from "../PostTeaser/PostTeaser";
+import { PostTeaser } from "../../posts/PostTeaser/PostTeaser";
 
 interface HomePageProps {
   posts: Post[];
@@ -19,10 +19,13 @@ const HomePosts = styled.div`
 
 export const HomePage: React.FC<HomePageProps> = ({ posts }) => {
   return (
-    <HomePosts>
-      {posts.map((post, index) => (
-        <PostTeaser post={post} key={index} />
-      ))}
-    </HomePosts>
+    <>
+      <h1>Newest publications</h1>
+      <HomePosts>
+        {posts.map((post, index) => (
+          <PostTeaser post={post} key={index} />
+        ))}
+      </HomePosts>
+    </>
   );
 };
