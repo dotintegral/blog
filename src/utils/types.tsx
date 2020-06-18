@@ -3,6 +3,7 @@ export interface PostMetadata {
   title: string;
   tags: string[];
   slug: string;
+  summary: string;
 }
 
 export interface Post extends PostMetadata {

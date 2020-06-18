@@ -13,13 +13,7 @@ const Home: React.FC<HomeProps> = ({ posts }) => {
     </div>
   ));
 
-  return (
-    <div>
-      <h1>Home</h1>
-      <hr />
-      {postComponents}
-    </div>
-  );
+  return <div>{postComponents}</div>;
 };
 
 export const getServerSideProps: GetServerSideProps<HomeProps> = async () => {

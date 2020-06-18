@@ -1,9 +1,9 @@
 import { GetServerSideProps } from "next";
 import { getPostBySlug, getSurroundingPosts } from "../../utils/post-cache";
 import { Post, SurroundingPosts } from "../../utils/types";
-import Page404 from "../../components/404/404";
-import { MarkdownRenderer } from "../../components/MarkdownRenderer/MarkdownRenderer";
-import { PostLink } from "../../components/PostLinik/PostLink";
+import Page404 from "../../components/pages/404/404";
+import { MarkdownRenderer } from "../../components/post/MarkdownRenderer/MarkdownRenderer";
+import { PostLink } from "../../components/common/PostLinik/PostLink";
 
 interface PostProps {
   post: Post | null;

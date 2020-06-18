@@ -1,6 +1,6 @@
 import Head from "next/head";
-import { GlobalStyle } from "../components/GlobalStyles/GlobalStyles";
-import { PageLayout } from "../components/PageLayout/PageLayout";
+import { GlobalStyle } from "../components/pages/GlobalStyles/GlobalStyles";
+import { PageLayout } from "../components/pages/PageLayout/PageLayout";
 
 // @ts-ignore
 const MyApp = ({ Component, pageProps }) => {
