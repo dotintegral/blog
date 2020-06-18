@@ -29,7 +29,6 @@ export const PostBody: React.FC<PostProps> = ({ post, surroundingPosts }) => {
     <PostWrapper>
       <PostDate>{format(post.date)}</PostDate>
       <PostTitle>{post.title}</PostTitle>
-      <Spacer />
       <MarkdownRenderer source={post.body} />
 
       <Surrounding surroundingPosts={surroundingPosts} />
