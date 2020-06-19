@@ -9,10 +9,10 @@ export const extractMetadata = (post: Post): PostMetadata => ({
 });
 
 type Groupped = {
-  [key: string]: Post[];
+  [key: string]: PostMetadata[];
 };
 
-export const groupByYear = (posts: Post[]) => {
+export const groupByYear = (posts: PostMetadata[]) => {
   const groupped: Groupped = {};
 
   posts.forEach((post) => {

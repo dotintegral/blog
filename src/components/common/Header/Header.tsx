@@ -19,7 +19,7 @@ const HeaderSubtitle = styled.div`
 
 export const Header: React.FC = () => (
   <HeaderWrapper>
-    <HeaderTitle>Artur Siery's Code Blog</HeaderTitle>
+    <HeaderTitle>Artur Siery</HeaderTitle>
     <HeaderSubtitle>Thoughs on coding</HeaderSubtitle>
     <Spacer />
   </HeaderWrapper>

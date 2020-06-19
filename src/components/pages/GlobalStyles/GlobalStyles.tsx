@@ -24,4 +24,15 @@ export const GlobalStyle = createGlobalStyle`
     margin-bottom: 36px;
     color: #303030;
   }
+
+  a {
+    text-decoration: none;
+    color: #ef5350;
+    transition: color linear 0.3s;
+  
+    &:hover {
+      color: #ffca28;
+    }
+  }
+  
 `;

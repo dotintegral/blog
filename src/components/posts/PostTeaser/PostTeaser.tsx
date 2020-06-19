@@ -12,6 +12,10 @@ export const TeaserWrapper = styled.a`
   box-sizing: border-box;
   padding: 18px 24px;
   color: #000;
+
+  &:hover {
+    color: #000;
+  }
 `;
 
 const TeaserHeadline = styled.div`

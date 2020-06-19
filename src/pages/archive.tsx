@@ -1,11 +1,11 @@
 import { getPosts } from "../utils/post-cache";
-import { Post } from "../utils/types";
+import { PostMetadata } from "../utils/types";
 import { GetServerSideProps } from "next";
-import { groupByYear } from "../utils/post-utils";
+import { groupByYear, extractMetadata } from "../utils/post-utils";
 import { YearPosts } from "../components/archive/YearPosts/YearPosts";
 
 interface ArchiveProps {
-  posts: Post[];
+  posts: PostMetadata[];
 }
 
 const Archive: React.FC<ArchiveProps> = ({ posts }) => {
@@ -15,7 +15,7 @@ const Archive: React.FC<ArchiveProps> = ({ posts }) => {
   years.reverse();
 
   const postByYears = years.map((year) => (
-    <YearPosts year={year} posts={groupped[year]} />
+    <YearPosts year={year} posts={groupped[year]} key={year} />
   ));
 
   return (
@@ -27,7 +27,7 @@ const Archive: React.FC<ArchiveProps> = ({ posts }) => {
 };
 
 export const getServerSideProps: GetServerSideProps<ArchiveProps> = async () => {
-  const posts = getPosts();
+  const posts = getPosts().map(extractMetadata);
   return { props: { posts } };
 };
 
