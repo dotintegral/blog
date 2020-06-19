@@ -5,7 +5,7 @@ import { updateCache } from "../../../utils/post-cache";
 
 const dataDir = process.cwd() + "/data/";
 const repoPath = "git@github.com:dotintegral/blog-data.git";
-const key = "1234567890";
+const key = process.env.REGENERATION_KEY || "123";
 
 export default (req: NextApiRequest, res: NextApiResponse) => {
   const { secret } = req.query;
