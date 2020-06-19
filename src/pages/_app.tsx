@@ -9,7 +9,7 @@ const MyApp = ({ Component, pageProps }) => {
       <Head>
         <title>Artur Siery - Thoughts on coding</title>
         <link
-          href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&family=Source+Sans+Pro&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Fira+Code&family=Source+Sans+Pro&display=swap"
           rel="stylesheet"
         />
         <link

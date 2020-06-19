@@ -2,19 +2,24 @@ import styled from "styled-components";
 import { PostMetadata } from "../../../utils/types";
 import { getHref } from "../../common/PostLinik/PostLink";
 import { format } from "../../../utils/date-formatter";
+import { laptopUp } from "../../../utils/breakpoints";
 
 export const TeaserWrapper = styled.a`
   display: block;
   background: #fafafa;
   text-decoration: none;
   border-radius: 8px;
-  flex: 0 0 49%;
+  flex: 0 0 100%;
   box-sizing: border-box;
   padding: 18px 24px;
   color: #000;
 
   &:hover {
     color: #000;
+  }
+
+  ${laptopUp} {
+    flex: 0 0 49%;
   }
 `;
 

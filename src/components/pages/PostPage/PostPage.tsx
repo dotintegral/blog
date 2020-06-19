@@ -11,7 +11,7 @@ export interface PostPageProps {
 }
 
 const PostWrapper = styled.div`
-  margin: 24px 0px;
+  margin: 24px 0px 0px;
   padding-bottom: 36px;
 `;
 

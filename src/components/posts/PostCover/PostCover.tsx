@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { PostMetadata } from "../../../utils/types";
 import { getCoverImage } from "../../../utils/post-utils";
+import { laptopUp } from "../../../utils/breakpoints";
 
 interface PostCoverProps {
   post: PostMetadata;
@@ -8,10 +9,14 @@ interface PostCoverProps {
 }
 
 const Cover = styled.div`
-  margin: 0 -60px;
+  margin: 0 -30px;
 
   & > img {
     width: 100%;
+  }
+
+  ${laptopUp} {
+    margin: 0 -60px;
   }
 `;
 

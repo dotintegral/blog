@@ -1,4 +1,5 @@
 import { createGlobalStyle } from "styled-components";
+import { mobileUp } from "../../../utils/breakpoints";
 
 export const GlobalStyle = createGlobalStyle`
   html {
@@ -15,8 +16,13 @@ export const GlobalStyle = createGlobalStyle`
     background-position: center;
     
     font-family: "Source Sans Pro", sans-serif;
-    font-size: 20px;
-    line-height: 30px;
+    font-size: 16px;
+    line-height: 24px;
+
+    ${mobileUp} {
+      font-size: 20px;
+      line-height: 30px;
+    }
   }
 
   p {
