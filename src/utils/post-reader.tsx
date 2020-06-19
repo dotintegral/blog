@@ -9,7 +9,9 @@ interface ParsedPost {
     date: Date;
     title: string;
     tags: string[];
-    summary: string;
+    description: string;
+    published: boolean;
+    cover_image: string;
   };
   body: string;
 }
@@ -23,7 +25,9 @@ const parsePost = (filename: string, data: string): Post => {
     title: parsed.attributes.title,
     tags: parsed.attributes.tags,
     body: parsed.body,
-    summary: parsed.attributes.summary,
+    description: parsed.attributes.description,
+    published: parsed.attributes.published,
+    cover_image: parsed.attributes.cover_image,
     slug,
   };
 

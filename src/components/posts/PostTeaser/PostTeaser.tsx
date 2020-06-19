@@ -57,6 +57,6 @@ export const PostTeaser: React.FC<TeaserProps> = ({
       {headline || format(post.date)}
     </TeaserHeadline>
     <TeaserTitle>{post.title}</TeaserTitle>
-    {summary ? <TeaserSummary>{post.summary}</TeaserSummary> : <></>}
+    {summary ? <TeaserSummary>{post.description}</TeaserSummary> : <></>}
   </TeaserWrapper>
 );

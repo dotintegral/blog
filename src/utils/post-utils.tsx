@@ -5,7 +5,9 @@ export const extractMetadata = (post: Post): PostMetadata => ({
   date: post.date,
   tags: post.tags,
   slug: post.slug,
-  summary: post.summary,
+  description: post.description,
+  published: post.published,
+  cover_image: post.cover_image,
 });
 
 type Groupped = {
