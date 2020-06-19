@@ -1,4 +1,5 @@
 import fs from "fs";
+import read from "fs-readdir-recursive";
 import fm from "front-matter";
 import { Post } from "./types";
 
@@ -18,7 +19,7 @@ interface ParsedPost {
 
 const parsePost = (filename: string, data: string): Post => {
   const parsed = fm(data) as ParsedPost;
-  const slug = filename.split(".")[0];
+  const slug = filename.split("/")[0];
 
   const post: Post = {
     date: Math.round(parsed.attributes.date.valueOf() / 1000),
@@ -35,7 +36,9 @@ const parsePost = (filename: string, data: string): Post => {
 };
 
 export const readPostsFromFiles = () => {
-  const postFiles = fs.readdirSync(postDir, "utf-8");
+  const postFiles = read(postDir).filter((filename) =>
+    /\d{4}-\d{2}-\d{2}-.*\/post.md/i.test(filename),
+  );
 
   const posts = postFiles
     .map((filename) => ({
