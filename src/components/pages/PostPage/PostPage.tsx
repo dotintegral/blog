@@ -3,6 +3,7 @@ import { SurroundingPosts, Post } from "../../../utils/types";
 import { MarkdownRenderer } from "../../posts/MarkdownRenderer/MarkdownRenderer";
 import { Surrounding } from "../../posts/SurroundingPosts/SurroundingPosts";
 import { format } from "../../../utils/date-formatter";
+import { PostCover } from "../../posts/PostCover/PostCover";
 
 export interface PostPageProps {
   post: Post;
@@ -30,6 +31,7 @@ export const PostPage: React.FC<PostPageProps> = ({
 }) => {
   return (
     <PostWrapper>
+      <PostCover cover={post.cover_image} post={post} />
       <PostDate>{format(post.date)}</PostDate>
       <PostTitle>{post.title}</PostTitle>
       <MarkdownRenderer source={post.body} />

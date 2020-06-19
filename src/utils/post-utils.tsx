@@ -29,3 +29,7 @@ export const groupByYear = (posts: PostMetadata[]) => {
 
   return groupped;
 };
+
+export const getCoverImage = (slug: string, cover: string) => {
+  return "/api/img/" + slug + "/" + cover;
+};
