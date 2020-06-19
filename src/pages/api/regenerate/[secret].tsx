@@ -7,8 +7,6 @@ const dataDir = process.cwd() + "/data/";
 const repoPath = "git@github.com:dotintegral/blog-data.git";
 const key = "1234567890";
 
-const git = simpleGit(dataDir);
-
 export default (req: NextApiRequest, res: NextApiResponse) => {
   const { secret } = req.query;
 
@@ -24,7 +22,7 @@ export default (req: NextApiRequest, res: NextApiResponse) => {
 
   fs.mkdirSync(dataDir);
 
-  git
+  simpleGit(dataDir)
     .clone(repoPath, dataDir)
     .then(() => {
       updateCache();
@@ -33,9 +31,11 @@ export default (req: NextApiRequest, res: NextApiResponse) => {
       res.setHeader("Content-Type", "application/json");
       res.end(JSON.stringify({ status: "ok" }));
     })
-    .catch((err) => {
+    .catch((err: Error) => {
+      console.error(err);
+
       res.statusCode = 500;
       res.setHeader("Content-Type", "application/json");
-      res.end(JSON.stringify({ status: "fail" }));
+      res.end(JSON.stringify({ status: "clone error", error: err.message }));
     });
 };
