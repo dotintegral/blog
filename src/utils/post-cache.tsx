@@ -5,12 +5,12 @@ import { extractMetadata } from "./post-utils";
 let cache: Post[] = [];
 
 export const updateCache = () => {
+  console.log("Updating cache");
   cache = readPostsFromFiles();
 };
 
 export const getPosts = (): Post[] => {
   if (cache.length === 0) {
-    console.log("Updating cache");
     updateCache();
   } else {
     console.log("Reading from cache");
