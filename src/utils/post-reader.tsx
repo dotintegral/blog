@@ -2,7 +2,7 @@ import fs from "fs";
 import fm from "front-matter";
 import { Post } from "./types";
 
-const postDir = process.cwd() + "/data/posts";
+const postDir = process.cwd() + "/data/posts/";
 
 interface ParsedPost {
   attributes: {
@@ -36,7 +36,7 @@ export const readPostsFromFiles = () => {
   const posts = postFiles
     .map((filename) => ({
       filename,
-      postData: fs.readFileSync(postDir + "/" + filename, "utf-8"),
+      postData: fs.readFileSync(postDir + filename, "utf-8"),
     }))
     .map(({ filename, postData }) => parsePost(filename, postData));
 
