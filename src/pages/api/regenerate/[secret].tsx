@@ -4,7 +4,7 @@ import { NextApiRequest, NextApiResponse } from "next";
 import { updateCache } from "../../../utils/post-cache";
 
 const dataDir = process.cwd() + "/data/";
-const repoPath = "git@github.com:dotintegral/blog-data.git";
+const repoPath = "https://github.com/dotintegral/blog-data.git";
 const key = process.env.REGENERATION_KEY || "123";
 
 export default (req: NextApiRequest, res: NextApiResponse) => {
@@ -14,6 +14,7 @@ export default (req: NextApiRequest, res: NextApiResponse) => {
     res.statusCode = 500;
     res.setHeader("Content-Type", "application/json");
     res.end(JSON.stringify({ status: "invalid secret" }));
+    return;
   }
 
   if (fs.existsSync(dataDir)) {
