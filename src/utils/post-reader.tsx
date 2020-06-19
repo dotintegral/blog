@@ -42,7 +42,8 @@ export const readPostsFromFiles = () => {
       filename,
       postData: fs.readFileSync(postDir + filename, "utf-8"),
     }))
-    .map(({ filename, postData }) => parsePost(filename, postData));
+    .map(({ filename, postData }) => parsePost(filename, postData))
+    .filter((post) => post.published);
 
   posts.reverse();
 
