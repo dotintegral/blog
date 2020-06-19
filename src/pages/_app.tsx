@@ -12,6 +12,10 @@ const MyApp = ({ Component, pageProps }) => {
           href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&family=Source+Sans+Pro&display=swap"
           rel="stylesheet"
         />
+        <link
+          rel="stylesheet"
+          href="https://highlightjs.org/static/demo/styles/railscasts.css"
+        />
       </Head>
       <GlobalStyle />
       <PageLayout>

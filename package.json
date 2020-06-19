@@ -8,11 +8,13 @@
     "start": "next start"
   },
   "dependencies": {
+    "@types/react-highlight.js": "^1.0.0",
     "@types/styled-components": "^5.1.0",
     "front-matter": "^4.0.2",
     "next": "9.4.4",
     "react": "16.13.1",
     "react-dom": "16.13.1",
+    "react-highlight.js": "^1.0.7",
     "react-markdown": "^4.3.1",
     "styled-components": "^5.1.1"
   },
