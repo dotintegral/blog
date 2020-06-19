@@ -3,7 +3,6 @@ import { SurroundingPosts, Post } from "../../../utils/types";
 import { MarkdownRenderer } from "../../posts/MarkdownRenderer/MarkdownRenderer";
 import { Surrounding } from "../../posts/SurroundingPosts/SurroundingPosts";
 import { format } from "../../../utils/date-formatter";
-import { Spacer } from "../../common/Spacer/Spacer";
 
 export interface PostPageProps {
   post: Post;
@@ -12,6 +11,7 @@ export interface PostPageProps {
 
 const PostWrapper = styled.div`
   margin: 24px 0px;
+  padding-bottom: 36px;
 `;
 
 const PostTitle = styled.h1`

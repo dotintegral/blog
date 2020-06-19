@@ -3,10 +3,15 @@ import { PostMetadata } from "../utils/types";
 import { GetServerSideProps } from "next";
 import { groupByYear, extractMetadata } from "../utils/post-utils";
 import { YearPosts } from "../components/archive/YearPosts/YearPosts";
+import styled from "styled-components";
 
 interface ArchiveProps {
   posts: PostMetadata[];
 }
+
+const ArchiveWrapper = styled.div`
+  padding-bottom: 60px;
+`;
 
 const Archive: React.FC<ArchiveProps> = ({ posts }) => {
   const groupped = groupByYear(posts);
@@ -19,10 +24,10 @@ const Archive: React.FC<ArchiveProps> = ({ posts }) => {
   ));
 
   return (
-    <div>
+    <ArchiveWrapper>
       <h1>Archive</h1>
       <div>{postByYears}</div>
-    </div>
+    </ArchiveWrapper>
   );
 };
 

@@ -7,6 +7,7 @@ const MyApp = ({ Component, pageProps }) => {
   return (
     <>
       <Head>
+        <title>Artur Siery - Thoughts on coding</title>
         <link
           href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&family=Source+Sans+Pro&display=swap"
           rel="stylesheet"

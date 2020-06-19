@@ -5,6 +5,7 @@ import Page404 from "../../components/pages/404/404";
 import { MarkdownRenderer } from "../../components/posts/MarkdownRenderer/MarkdownRenderer";
 import { PostLink } from "../../components/common/PostLinik/PostLink";
 import { PostPage } from "../../components/pages/PostPage/PostPage";
+import Head from "next/head";
 
 export interface PostPageProps {
   post: PostType | null;
@@ -16,7 +17,14 @@ const Post: React.FC<PostPageProps> = ({ post, surroundingPosts }) => {
     return <Page404 />;
   }
 
-  return <PostPage post={post} surroundingPosts={surroundingPosts} />;
+  return (
+    <>
+      <Head>
+        <title>{post.title} - Artur Siery - Thoughts on coding</title>
+      </Head>
+      <PostPage post={post} surroundingPosts={surroundingPosts} />
+    </>
+  );
 };
 
 export const getServerSideProps: GetServerSideProps<PostPageProps> = async (
