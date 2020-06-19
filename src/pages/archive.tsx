@@ -2,7 +2,7 @@ import { getPosts } from "../utils/post-cache";
 import { PostMetadata } from "../utils/types";
 import { GetServerSideProps } from "next";
 import { groupByYear, extractMetadata } from "../utils/post-utils";
-import { YearPosts } from "../components/archive_2/YearPosts/YearPosts";
+import { YearPosts } from "../components/archive/YearPosts/YearPosts";
 import styled from "styled-components";
 
 interface ArchiveProps {
