@@ -1,10 +1,8 @@
 import fs from "fs";
 import { NextApiRequest, NextApiResponse } from "next";
 import { updateCache } from "../../../utils/post-cache";
-import shell from "shelljs";
+import { downloadData } from "../../../utils/data-downloader";
 
-const dataDir = process.cwd() + "/data/";
-const repoPath = "https://github.com/dotintegral/blog-data.git";
 const key = process.env.REGENERATION_KEY || "123";
 
 export default (req: NextApiRequest, res: NextApiResponse) => {
@@ -17,14 +15,7 @@ export default (req: NextApiRequest, res: NextApiResponse) => {
     return;
   }
 
-  if (fs.existsSync(dataDir)) {
-    fs.rmdirSync(dataDir, { recursive: true });
-  }
-
-  fs.mkdirSync(dataDir);
-
-  const clone = `git clone ${repoPath} ${dataDir}`;
-  const result = shell.exec(clone);
+  const result = downloadData();
 
   if (result.code === 0) {
     updateCache();

@@ -6,12 +6,24 @@ import Document, {
   Html,
 } from "next/document";
 import { ServerStyleSheet } from "styled-components";
+import { GlobalStyle } from "../components/pages/GlobalStyles/GlobalStyles";
+import { PageLayout } from "../components/pages/PageLayout/PageLayout";
 
 export default class extends Document {
   render() {
     return (
       <Html>
-        <Head />
+        <Head>
+          <title>Artur Siery - Thoughts on coding</title>
+          <link
+            href="https://fonts.googleapis.com/css2?family=Fira+Code&family=Source+Sans+Pro&display=swap"
+            rel="stylesheet"
+          />
+          <link
+            rel="stylesheet"
+            href="https://highlightjs.org/static/demo/styles/railscasts.css"
+          />
+        </Head>
         <body>
           <Main />
           <NextScript />
