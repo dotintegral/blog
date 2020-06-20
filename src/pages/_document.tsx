@@ -6,8 +6,6 @@ import Document, {
   Html,
 } from "next/document";
 import { ServerStyleSheet } from "styled-components";
-import { GlobalStyle } from "../components/pages/GlobalStyles/GlobalStyles";
-import { PageLayout } from "../components/pages/PageLayout/PageLayout";
 
 export default class extends Document {
   render() {
