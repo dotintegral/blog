@@ -33,3 +33,13 @@ export const groupByYear = (posts: PostMetadata[]) => {
 export const getCoverImage = (slug: string, cover: string) => {
   return "/api/img/" + slug + "/" + cover;
 };
+
+export const getImageUrl = (slug: string, src: string) => {
+  const remoteUrl = /^https?:\/\/.*$/.test(src);
+
+  if (remoteUrl) {
+    return src;
+  }
+
+  return "/api/img/" + slug + "/" + src;
+};

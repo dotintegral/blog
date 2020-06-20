@@ -1,15 +1,18 @@
 import ReactMarkdown from "react-markdown/with-html";
 
 import { CodeRenderer } from "./renderers/CodeRenderer";
+import { ImageRenderer } from "./renderers/ImageRenderer";
 
 interface MarkdownProps {
   source: string;
+  slug: string;
 }
 
-const renderers = {
-  code: CodeRenderer,
-};
+export const MarkdownRenderer: React.FC<MarkdownProps> = ({ source, slug }) => {
+  const renderers = {
+    code: CodeRenderer,
+    image: ImageRenderer(slug),
+  };
 
-export const MarkdownRenderer: React.FC<MarkdownProps> = ({ source }) => {
   return <ReactMarkdown source={source} renderers={renderers} />;
 };

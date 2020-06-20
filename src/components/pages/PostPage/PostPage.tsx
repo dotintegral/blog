@@ -34,7 +34,7 @@ export const PostPage: React.FC<PostPageProps> = ({
       <PostCover cover={post.cover_image} post={post} />
       <PostDate>{format(post.date)}</PostDate>
       <PostTitle>{post.title}</PostTitle>
-      <MarkdownRenderer source={post.body} />
+      <MarkdownRenderer source={post.body} slug={post.slug} />
 
       <Surrounding surroundingPosts={surroundingPosts} />
     </PostWrapper>
