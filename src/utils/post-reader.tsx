@@ -3,7 +3,11 @@ import read from "fs-readdir-recursive";
 import fm from "front-matter";
 import { Post } from "./types";
 
-const postDir = process.cwd() + "/data/posts/";
+const developPostDir = process.cwd() + "/../blog-data/posts/";
+const productionPostDir = process.cwd() + "/data/posts/";
+const developmentMode = process.env.NODE_ENV === "development";
+
+const postDir = developmentMode ? developPostDir : productionPostDir;
 
 interface ParsedPost {
   attributes: {

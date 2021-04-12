@@ -12,6 +12,9 @@ export const updateCache = () => {
 export const getPosts = (): Post[] => {
   if (cache.length === 0) {
     updateCache();
+  } else if (process.env.NODE_ENV === "development") {
+    console.log("Forcing cache update in development mode");
+    updateCache();
   } else {
     console.log("Reading from cache");
   }
